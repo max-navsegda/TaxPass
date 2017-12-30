@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/decore"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/line"
+        android:elevation="100dp"
+        android:orientation="vertical" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/decore"
+        tools:context=".MapsActivity" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/cancel_order"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/make_order_label"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/doneOrder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text= "@string/done_order_label"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/connection_error"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="1dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="@string/connection_error"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/orderView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha=".8"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/decore"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:id="@+id/fromET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:alpha="1"
+            android:hint="@string/form_label"
+            android:textColor="#373737"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/toET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/to_label"
+            android:textColor="#373737"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sendOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#595959"
+                android:padding="10dp"
+                android:text="Создать заказ"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/line" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttons"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:alpha=".8"
+        android:background="@android:color/white"
+        >
+        <TextView
+            android:id="@+id/orderStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:background="#595959"
+            android:textColor="#ffffff"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            />
+    </LinearLayout>
+</RelativeLayout>
